@@ -1,7 +1,8 @@
 //! UI node types and related data structures.
 //!
 //! Layouts are composed of multiple nodes, which live in a tree-like data structure.
-use slotmap::{DefaultKey, SlotMap, SparseSecondaryMap};
+use slotmap::{DefaultKey, SecondaryMap, SlotMap};
+type SparseSecondaryMap<K, V> = SecondaryMap<K, V>;
 
 use crate::compute::{measure_node_size, perform_node_layout};
 use crate::data::NodeData;
